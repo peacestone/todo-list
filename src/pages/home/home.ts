@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { NewTaskPage } from '../new-task/new-task.module';
 
 @Component({
   selector: 'page-home',
@@ -21,8 +22,8 @@ export class HomePage {
 
 
 itemSelected(item: string) {
-  console.log("Selected Item", item);
-  }
+    this.navCtrl.push(NewTaskPage);
+}
 }
   
 
