@@ -11,4 +11,19 @@ export class HomePage {
 
   }
 
+  items = [
+    'Task 1',
+    'Task 2',
+    'Task 3',
+  ]
+;
+
+
+
+itemSelected(item: string) {
+  console.log("Selected Item", item);
+  }
 }
+  
+
+
