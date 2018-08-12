@@ -5,4 +5,18 @@ page-new-task {
     div.toolbar-title {
         color: #ffffff;
     }
+
+    textarea {
+        border: 1px solid black;
+        height: 5em;
+    }
+    #description-label {
+        display: block;
+        padding: 1em;
+    }
+    #description-textarea{
+        width: 95%;
+        margin-left: 0px;
+        height: 10em;
+    }
 }
