@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header color='#fff'>
   <ion-navbar>
     <ion-title text-center   >
       Tasks
@@ -9,9 +9,11 @@
 <ion-content >
 
       <ion-list>
-          <button color='light' ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+          <button  detail-none ion-item no-lines *ngFor="let item of items" (click)="itemSelected(item)">
             {{ item }}
           </button>  
         </ion-list>
+
+        <button >chani</button>
 </ion-content>
 
