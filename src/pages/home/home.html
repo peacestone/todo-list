@@ -8,14 +8,10 @@
 
 <ion-content >
 
-  <ion-grid>
-    <ion-row offset-1 col-10  *ngFor="let item of items"  >
-      <ion-col  >
-          <button color='light' ion-item (click)="itemSelected(item)">
-              {{ item }}
-          </button> 
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+      <ion-list>
+          <button color='light' ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+            {{ item }}
+          </button>  
+        </ion-list>
 </ion-content>
 
