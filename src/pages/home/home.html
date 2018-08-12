@@ -9,10 +9,10 @@
 <ion-content >
 
       <ion-list>
-          <button  detail-none ion-item no-lines *ngFor="let item of items" (click)="itemSelected(item)">
+          <button  detail-none ion-item no-lines *ngFor="let item of items" (click)="taskSelected(item)">
             {{ item }}
           </button>  
         </ion-list>
-        <button color='light' text-center detail-none ion-item no-lines ion-item id='add-task' >Add Task</button>
+        <button color='light' text-center detail-none ion-item no-lines ion-item id='add-task' (click)="itemSelected(item)" >Add Task</button>
 </ion-content>
 

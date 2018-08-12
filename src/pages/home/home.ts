@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { NewTaskPage } from '../new-task/new-task.module';
+import { NewTaskPage } from '../new-task/new-task';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-
   constructor(public navCtrl: NavController) {
 
   }
@@ -23,6 +22,10 @@ export class HomePage {
 
 itemSelected(item: string) {
     this.navCtrl.push(NewTaskPage);
+  } 
+
+taskSelected(item: string){
+  
 }
 }
   
