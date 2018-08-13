@@ -19,4 +19,46 @@ page-new-task {
         margin-left: 0px;
         height: 10em;
     }
+
+    label {
+        display: block;
+        padding: 1em;
+    }
+
+    select {
+        display: block;
+        width: 100%;
+        padding: 1em;
+    }
+
+    input {
+        border: 1px solid black;
+        width: 95%;
+        margin-left: 0px;
+        margin-top: 1em;
+        padding: 1em;
+    }
+
+    button {
+        width: 95%;
+        display: block;
+        padding: 1em;
+        margin-bottom: 0.5em;
+        color: #ffffff;
+        border: 0.5px solid gray;
+
+    }
+
+    #add-task {
+        margin-top: 2em;
+        margin-bottom: 1em;
+        background-color: map-get($colors , secondary );
+
+    }
+
+    #cancel {
+        background-color: map-get($colors , danger );
+
+    }
+
 }

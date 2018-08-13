@@ -8,6 +8,9 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {NewTaskPage} from '../pages/new-task/new-task';
 
+import { CalendarModule } from "ion2-calendar";
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -16,7 +19,8 @@ import {NewTaskPage} from '../pages/new-task/new-task';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    CalendarModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
