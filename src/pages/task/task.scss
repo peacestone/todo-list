@@ -32,5 +32,33 @@ page-task {
     #time-ago-span {
         text-align: right;
         display: block;
+        margin-bottom: 3em;
+    }
+    textarea {
+        width: 100%;
+        margin-top: 3em;
+    }
+    #note-div {
+        padding: 1em;
+    }
+
+    #add-note-button {
+        border: 0.5px solid black;
+        margin-top: 0.5em;
+    }
+    #picture-button {
+        width: 4em;
+        margin: 1em auto 3em auto;
+
+        display: block;
+    }
+    ion-icon {
+        font-size: 2em;
+    }
+    div.toolbar-background {
+        background-color: white;
+    }
+    ion-header {
+        border: 1px black solid;
     }
 }

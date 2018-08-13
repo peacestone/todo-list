@@ -30,9 +30,18 @@
   <h5>HISTORY</h5>
 
   <button id='load-previous-button' ion-button full color='light'>Load Previous</button>
-  <div *ngFor="let note of notes" >
+  <div id='note-div' *ngFor="let note of notes" >
     <span id='time-ago-span'>{{note.timeAgo}}</span>
     <div>{{note.content}}</div>
   </div>
+
+  <textarea rows='3'></textarea>
+
+  <button id='add-note-button' ion-button full color='light'>Add Note </button>
+
+  <button id='picture-button'  ion-button >
+    <ion-icon name='md-camera'></ion-icon>
+  </button>
+
 
 </ion-content>
