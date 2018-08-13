@@ -22,4 +22,15 @@ page-task {
         margin-top: 7em;
         border: 0.5px solid black;
     }
+    h5 {
+        text-align: center;
+        margin-bottom: 2em;
+    }
+    #load-previous-button {
+        border: 0.5px solid black;
+    }
+    #time-ago-span {
+        text-align: right;
+        display: block;
+    }
 }
