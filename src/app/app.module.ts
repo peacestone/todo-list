@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {NewTaskPage} from '../pages/new-task/new-task';
+import {TaskPage} from '../pages/task/task';
 
 import { CalendarModule } from "ion2-calendar";
 
@@ -15,7 +16,8 @@ import { CalendarModule } from "ion2-calendar";
   declarations: [
     MyApp,
     HomePage,
-    NewTaskPage
+    NewTaskPage,
+    TaskPage,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import { CalendarModule } from "ion2-calendar";
   entryComponents: [
     MyApp,
     HomePage,
-    NewTaskPage
+    NewTaskPage,
+    TaskPage,
 
   ],
   providers: [
