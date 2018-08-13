@@ -1,3 +1,14 @@
 page-task {
-
+    #description-label {
+        display: block;
+        padding: 1em;
+    }
+    #description-div {
+        padding-left: 1em;
+    }
+    #due-date-span {
+        display: inline-block;
+        padding: 1em;
+        margin-right: 5em;
+    }
 }

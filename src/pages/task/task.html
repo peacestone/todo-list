@@ -7,12 +7,20 @@
 <ion-header>
 
   <ion-navbar hideBackButton >
-    <ion-title text-center >Task #55</ion-title>
+    <ion-title text-center >Task #{{task.id}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <label id='description-label' ><strong>Description</strong></label>
+
+  <p id='description-div'>
+    {{task.description}}
+  </p>
+
+  <span id="due-date-span"><strong>Due Date</strong></span> <span>{{task.dueDate}}</span>
 
 </ion-content>
