@@ -10,5 +10,16 @@ page-task {
         display: inline-block;
         padding: 1em;
         margin-right: 5em;
+        margin-bottom: 1em;
+    }
+    #assigned-to-span {
+        display: inline-block;
+        margin-right: 5em;
+        margin-top: 1em;
+
+    }
+    hr {
+        margin-top: 7em;
+        border: 0.5px solid black;
     }
 }

@@ -24,6 +24,6 @@ export class TaskPage {
 
   //Task: {id: number, description: string};
 
-  task = {id: 44, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', dueDate: 'March 14th, 2018'};
+  task = {id: 44, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', dueDate: 'March 14th, 2018', email: 'example@example.com'};
 
 }
