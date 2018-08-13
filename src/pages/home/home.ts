@@ -25,7 +25,7 @@ itemSelected(item: string) {
   } 
 
 taskSelected(item: string){
-  
+
 }
 }
   
