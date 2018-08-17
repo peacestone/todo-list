@@ -17,16 +17,8 @@
   <label id='description-label' for='description-textarea' >Description</label> 
   <textarea id="description-textarea" id='description-textarea'  > </textarea>
 
-
-  <label id='description-label' for='date-select' >Due Date</label> 
-
-  <select (click)="showCalendar = !showCalendar" id='date-select' >
-    <option selected>Select Date</option>
-    <option>Feb 1st</option>
-    <option>Feb 2nd</option>
-    <option>Feb 3rd</option>
-
-  </select>
+  <label for="due-date">Due Date:</label>
+  <input type="date" id='due-date' />
   <label id='assigned-person' for='date-select' >Assign to</label>
 
   <input />
@@ -34,11 +26,6 @@
   <button ion-button id='add-task' (click)="addTaskClicked()"  >Add Task</button>
   <button ion-button (click)="cancelClicked()" id='cancel' >Cancel</button>
 
-  <ion-calendar ng-if="showCalendar"  [(ngModel)]="date"
-              (onChange)="onChange($event)"
-              [type]="type"
-              [format]="'YYYY-MM-DD'">
-</ion-calendar>
 
 
 
