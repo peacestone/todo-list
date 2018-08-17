@@ -1,26 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NewTaskPage } from '../new-task/new-task';
 import {TaskServiceProvider} from '../../providers/task-service/task-service'
+import {TaskPage} from '../task/task';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
-  tasksList = []
-  constructor(public navCtrl: NavController, private taskServiceProvider : TaskServiceProvider) {
+export class HomePage implements OnInit {
+  tasksList : any = []
+  constructor(public navCtrl: NavController, private taskServiceProvider : TaskServiceProvider) { }
+
+  ngOnInit(){
     this.getTasks()
   }
 
-  // items = [
-  //   'Task 1',
-  //   'Task 2',
-  //   'Task 3',
-  // ]
 ;
- getTasks() {
-   this.taskServiceProvider.getTasks().subscribe((data) =>  {
-     this.tasksList = data
+ getTasks(): void {
+   this.taskServiceProvider.getTasks()
+    .subscribe((data) =>  {
+      this.tasksList = data
    })
  }
 
@@ -30,7 +29,9 @@ itemSelected(item: string) {
     this.navCtrl.push(NewTaskPage);
   } 
 
-taskSelected(item: string){
+taskSelected(task: string){
+  console.log(task)
+  this.navCtrl.push(TaskPage, task);
 
 }
 }

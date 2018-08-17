@@ -9,8 +9,8 @@
 <ion-content >
 
       <ion-list>
-          <button  detail-none ion-item no-lines *ngFor="let task of taskList" (click)="taskSelected(item)">
-            {{ task }}
+          <button  detail-none ion-item no-lines *ngFor="let task of tasksList" (click)="taskSelected(task)">
+            {{ task.content }}
           </button>  
         </ion-list>
         <button color='light' text-center detail-none ion-item no-lines ion-item id='add-task' (click)="itemSelected(item)" >Add Task</button>

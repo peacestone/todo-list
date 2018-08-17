@@ -21,14 +21,10 @@ export class TaskServiceProvider {
     console.log('Hello TaskServiceProvider Provider');
   }
 
-  async xgetTasks()  {
-     await this.http.get('http://localhost:8000/api/tasks')
-
-  }
   getTasks(){
     return this.http.get('http://localhost:8000/api/tasks')
-    .do((res: Response) => res.json())
-    .map((res : Response ) => res.json())
+    .do((res: Response) => {console.log(res)})
+    // .map((res : Response ) => res
 
   }
 
