@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {HomePage} from '../home/home';
 import {TaskPage} from '../task/task';
-
+import {TaskServiceProvider} from '../../providers/task-service/task-service'
 
 /**
  * Generated class for the NewTaskPage page.
@@ -17,14 +17,15 @@ import {TaskPage} from '../task/task';
   templateUrl: 'new-task.html',
 })
 export class NewTaskPage {
-  showCalendar: boolean;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-     this.showCalendar = false;
 
+  public description : string
+  public dueDate : string
+  public email :string
+  // public task : {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, private taskServiceProvider : TaskServiceProvider) {
+    this.description = ''
+    this.email = ''
   }
-
-  date: string;
-  type: string;
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewTaskPage');
@@ -34,12 +35,12 @@ export class NewTaskPage {
     this.navCtrl.push(HomePage);
   }
 
-  addTaskClicked() {
-    this.navCtrl.push(TaskPage);
+  addTaskClicked() : void {
+    
+    this.taskServiceProvider.postTask({dueDate: this.dueDate, email: this.email, content: this.description })
+    .subscribe((data  ) => {
+     this.navCtrl.push(TaskPage, data) },
+   err=> console.log(err))
+
   }
-
-
-
-
-
 }

@@ -15,15 +15,15 @@
 
 <ion-content padding >
   <label id='description-label' for='description-textarea' >Description</label> 
-  <textarea id="description-textarea" id='description-textarea'  > </textarea>
+  <textarea (input)='description = $event.target.value' [value]='description' id="description-textarea" ></textarea>
 
   <label for="due-date">Due Date:</label>
-  <input type="date" id='due-date' />
+  <input type="date" id='due-date' [(ngModel)]="dueDate" />
   <label id='assigned-person' for='date-select' >Assign to</label>
 
-  <input />
+  <input id="email" [(ngModel)]='email' />
 
-  <button ion-button id='add-task' (click)="addTaskClicked()"  >Add Task</button>
+  <button ion-button id='add-task' (click)="addTaskClicked($event)"  >Add Task</button>
   <button ion-button (click)="cancelClicked()" id='cancel' >Cancel</button>
 
 
