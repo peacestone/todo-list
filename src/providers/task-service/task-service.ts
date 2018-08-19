@@ -54,6 +54,10 @@ export class TaskServiceProvider {
     return this.http.post(`http://localhost:8000/api/tasks/${note.task_id}/notes`, note, {responseType: 'text'})
   }
 
+  fetchNotes(taskId, pageNumber){
+    return this.http.get(`http://localhost:8000/api/tasks/${taskId}/notes?page=${pageNumber}`)
+  }
+
 
 
 }

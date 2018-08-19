@@ -15,6 +15,9 @@ import {TaskServiceProvider} from '../../providers/task-service/task-service'
 })
 export class TaskPage {
   content : string;
+  notesPageNumber : number;
+  baseUrl : string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private taskServiceProvider : TaskServiceProvider) {
 
   this.content = ''
@@ -23,7 +26,8 @@ export class TaskPage {
   this.description = navParams.get('content');
   this.dueDate = navParams.get('dueDate');
   this.email = navParams.get('email');
-
+  this.notesPageNumber = 2;
+  this.baseUrl = 'http://localhost:8000'
 }
 
   ionViewDidLoad() {
@@ -34,6 +38,16 @@ export class TaskPage {
     .subscribe((data ) => {
       this.content = ''
       this.notes.unshift(JSON.parse(data))})
+  }
+
+  handleHistoryButtonClick() : void {
+
+    this.taskServiceProvider.fetchNotes(this.id, this.notesPageNumber)
+    .subscribe(((res : any) => {
+      console.log(res, this)
+      this.notes = this.notes.concat(res.data)
+      this.notesPageNumber++
+    }))
   }
 
   id : string;

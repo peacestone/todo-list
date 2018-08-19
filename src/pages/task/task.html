@@ -29,10 +29,19 @@
 
   <h5>HISTORY</h5>
 
-  <button id='load-previous-button' ion-button full color='light'>Load Previous</button>
-  <div id='note-div' *ngFor="let note of notes" >
-    <span id='time-ago-span'>{{note.created_at}}</span>
-    <div>{{note.content}}</div>
+  <button (click)="handleHistoryButtonClick()" id='load-previous-button' ion-button full color='light'>Load Previous</button>
+  <div  class='note-div' *ngFor="let note of notes" >
+    <div *ngIf="!note.img_url">
+      <span id='time-ago-span'>{{note.created_at}}</span>
+      <div>{{note.content}}</div>
+    </div>
+
+    <div *ngIf="note.img_url" >
+      <img src="http://localhost:8000{{note.img_url}}" />
+
+      <h1>Great</h1>
+    </div>
+
   </div>
 
   <textarea id='note' [(ngModel)]='content' rows='3'></textarea>
