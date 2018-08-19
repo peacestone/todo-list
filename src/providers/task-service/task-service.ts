@@ -49,4 +49,11 @@ export class TaskServiceProvider {
     // )
   }
 
+  createNote(note){
+    
+    return this.http.post(`http://localhost:8000/api/tasks/${note.task_id}/notes`, note, {responseType: 'text'})
+  }
+
+
+
 }

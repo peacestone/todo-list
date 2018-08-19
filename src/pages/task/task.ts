@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import {TaskServiceProvider} from '../../providers/task-service/task-service'
 /**
  * Generated class for the TaskPage page.
  *
@@ -14,9 +14,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'task.html',
 })
 export class TaskPage {
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  content : string;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private taskServiceProvider : TaskServiceProvider) {
 
-  
+  this.content = ''
   this.notes = navParams.get('notes');
   this.id = navParams.get('id');
   this.description = navParams.get('content');
@@ -26,6 +27,13 @@ export class TaskPage {
 }
 
   ionViewDidLoad() {
+  }
+
+  postNote() : void {
+     this.taskServiceProvider.createNote({content: this.content, task_id: this.id})
+    .subscribe((data ) => {
+      this.content = ''
+      this.notes.unshift(JSON.parse(data))})
   }
 
   id : string;
