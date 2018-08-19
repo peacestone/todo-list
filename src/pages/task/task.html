@@ -32,14 +32,12 @@
   <button (click)="handleHistoryButtonClick()" id='load-previous-button' ion-button full color='light'>Load Previous</button>
   <div  class='note-div' *ngFor="let note of notes" >
     <div *ngIf="!note.img_url">
-      <span id='time-ago-span'>{{note.created_at}}</span>
+      <span id='time-ago-span'>{{note.created_time_ago}}</span>
       <div>{{note.content}}</div>
     </div>
 
     <div *ngIf="note.img_url" >
       <img src="http://localhost:8000{{note.img_url}}" />
-
-      <h1>Great</h1>
     </div>
 
   </div>
@@ -48,9 +46,12 @@
 
   <button id='add-note-button' (click)='postNote()'   ion-button full color='light'>Add Note </button>
 
-  <button id='picture-button'  ion-button >
-    <ion-icon name='md-camera'></ion-icon>
+  <img [src]="imageURL" *ngIf="imageURL" />
+
+  <button id='picture-button' (click)="takePhoto()"  ion-button >
+      <ion-icon name='md-camera'></ion-icon>
   </button>
 
+  <input type="file" name="hi" value="rocks">
 
-</ion-content>
+  </ion-content>

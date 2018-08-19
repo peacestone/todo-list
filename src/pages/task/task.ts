@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {TaskServiceProvider} from '../../providers/task-service/task-service'
+import { Camera } from '@ionic-native/camera';
+
 /**
  * Generated class for the TaskPage page.
  *
@@ -16,9 +18,9 @@ import {TaskServiceProvider} from '../../providers/task-service/task-service'
 export class TaskPage {
   content : string;
   notesPageNumber : number;
-  baseUrl : string;
+  imageURL;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private taskServiceProvider : TaskServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private taskServiceProvider : TaskServiceProvider, private camera : Camera) {
 
   this.content = ''
   this.notes = navParams.get('notes');
@@ -27,7 +29,6 @@ export class TaskPage {
   this.dueDate = navParams.get('dueDate');
   this.email = navParams.get('email');
   this.notesPageNumber = 2;
-  this.baseUrl = 'http://localhost:8000'
 }
 
   ionViewDidLoad() {
@@ -50,12 +51,25 @@ export class TaskPage {
     }))
   }
 
+  
+
   id : string;
   description : string;
   dueDate : string ;
   email : string ;
   notes : Array<any>;
   // notes: Array<{timeAgo: string, content: string}>
+
+  takePhoto(){
+    this.camera.getPicture().then((imageData) => {
+       this.imageURL = imageData
+       this.content = imageData
+       this.postNote()
+
+    }, (err) => {
+       console.log(err);
+    });
+  }
 
 
 }
