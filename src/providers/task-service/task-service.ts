@@ -17,6 +17,9 @@ import 'rxjs/add/operator/catch';
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
+
+const rootApiUrl = 'https://cool-todo-list.herokuapp.com/';
+
 @Injectable(
 )
 export class TaskServiceProvider {
@@ -25,8 +28,9 @@ export class TaskServiceProvider {
     console.log('Hello TaskServiceProvider Provider');
   }
 
+
   getTasks(){
-    return this.http.get('http://localhost:8000/api/tasks')
+    return this.http.get(`${rootApiUrl}/api/tasks`)
     .do((res: Response) => {console.log(res)})
     // .map((res : Response ) => res
 
@@ -37,25 +41,16 @@ export class TaskServiceProvider {
       headers: new HttpHeaders({'Content-Type': 'application/json'})
     }
     
-    return this.http.post('http://localhost:8000/api/tasks' ,task, httpOptions)
-    // .do((res : Response ) => console.log(res))
-    // .do((res : Response ) => console.log(res))
-
-    // .map((res : Response) => res.json() )
-    // .do((res : Response) => {console.log(res)})
-    // .do((res : Response) => console.log(res))
-    // // .do((res : Response) => console.log(res))
-    // tap((res) => console.log(res))
-    // )
+    return this.http.post(`${rootApiUrl}/api/tasks` ,task, httpOptions)
   }
 
   createNote(note){
     
-    return this.http.post(`http://localhost:8000/api/tasks/${note.task_id}/notes`, note, {responseType: 'text'})
+    return this.http.post(`${rootApiUrl}/api/tasks/${note.task_id}/notes`, note, {responseType: 'text'})
   }
 
   fetchNotes(taskId, pageNumber){
-    return this.http.get(`http://localhost:8000/api/tasks/${taskId}/notes?page=${pageNumber}`)
+    return this.http.get(`${rootApiUrl}/api/tasks/${taskId}/notes?page=${pageNumber}`)
   }
 
 

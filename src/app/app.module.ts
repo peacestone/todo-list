@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { Camera } from '@ionic-native/camera';
+import { Content } from 'ionic-angular';
+
 
 import { TaskServiceProvider } from '../providers/task-service/task-service';
 
@@ -44,7 +46,8 @@ import { TaskServiceProvider } from '../providers/task-service/task-service';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     TaskServiceProvider,
     HttpClientModule,
-    Camera
+    Camera,
+    Content
   ]
 })
 export class AppModule {}

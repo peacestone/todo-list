@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component ,ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {TaskServiceProvider} from '../../providers/task-service/task-service'
 import { Camera } from '@ionic-native/camera';
+import { Content } from 'ionic-angular';
 
 /**
  * Generated class for the TaskPage page.
@@ -20,10 +21,13 @@ export class TaskPage {
   notesPageNumber : number;
   imageURL;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private taskServiceProvider : TaskServiceProvider, private camera : Camera) {
+  @ViewChild(Content) contentContainer: Content;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private taskServiceProvider : TaskServiceProvider, private camera : Camera) 
+  {
 
   this.content = ''
-  this.notes = navParams.get('notes');
+  this.notes = navParams.get('notes') || [];
   this.id = navParams.get('id');
   this.description = navParams.get('content');
   this.dueDate = navParams.get('dueDate');
@@ -39,6 +43,8 @@ export class TaskPage {
     .subscribe((data ) => {
       this.content = ''
       this.notes.unshift(JSON.parse(data))})
+      this.contentContainer.resize()
+
   }
 
   handleHistoryButtonClick() : void {
@@ -47,6 +53,7 @@ export class TaskPage {
     .subscribe(((res : any) => {
       console.log(res, this)
       this.notes = this.notes.concat(res.data)
+      this.contentContainer.resize()
       this.notesPageNumber++
     }))
   }
