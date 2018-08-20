@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {HomePage} from '../home/home';
 import {TaskPage} from '../task/task';
 import {TaskServiceProvider} from '../../providers/task-service/task-service'
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the NewTaskPage page.
@@ -22,7 +23,7 @@ export class NewTaskPage {
   public dueDate : string
   public email :string
   // public task : {}
-  constructor(public navCtrl: NavController, public navParams: NavParams, private taskServiceProvider : TaskServiceProvider) {
+  constructor(public navCtrl: NavController, private alertCtrl : AlertController, public navParams: NavParams, private taskServiceProvider : TaskServiceProvider) {
     this.description = ''
     this.email = ''
   }
@@ -36,11 +37,19 @@ export class NewTaskPage {
   }
 
   addTaskClicked() : void {
+    if(this.description){
     
     this.taskServiceProvider.postTask({dueDate: this.dueDate, email: this.email, content: this.description })
     .subscribe((data  ) => {
      this.navCtrl.push(TaskPage, data) },
    err=> console.log(err))
+  }   else {
+    const alert = this.alertCtrl.create({
+      title: 'Task Description Cannot Be Empty!',
+      buttons: ['Dismiss']
+    })
+    alert.present();
+  }
 
   }
 }

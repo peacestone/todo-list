@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {TaskServiceProvider} from '../../providers/task-service/task-service'
 import { Camera } from '@ionic-native/camera';
 import { Content } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the TaskPage page.
@@ -23,7 +24,7 @@ export class TaskPage {
 
   @ViewChild(Content) contentContainer: Content;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private taskServiceProvider : TaskServiceProvider, private camera : Camera) 
+  constructor(public navCtrl: NavController, private alertCtrl : AlertController, public navParams: NavParams, private taskServiceProvider : TaskServiceProvider, private camera : Camera) 
   {
 
   this.content = ''
@@ -47,13 +48,21 @@ export class TaskPage {
 
 
   postNote() : void {
-     this.taskServiceProvider.createNote({content: this.content, task_id: this.id})
-    .subscribe((data ) => {
-      this.content = ''
-      this.notes.unshift(JSON.parse(data))})
-      this.contentContainer.resize()
-
-  }
+      if (this.content){
+      this.taskServiceProvider.createNote({content: this.content, task_id: this.id})
+      .subscribe((data ) => {
+        this.content = ''
+        this.notes.unshift(JSON.parse(data))})
+        this.contentContainer.resize()
+      }
+      else {
+        const alert = this.alertCtrl.create({
+          title: 'Note Content Cannot Be Empty!',
+          buttons: ['Dismiss']
+        })
+        alert.present();
+      }
+    }
 
   handleHistoryButtonClick() : void {
 
