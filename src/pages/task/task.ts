@@ -63,7 +63,7 @@ export class TaskPage {
   takePhoto(){
     this.camera.getPicture().then((imageData) => {
        this.imageURL = imageData
-       this.content = imageData
+       this.notes.unshift(imageData)
        this.postNote()
 
     }, (err) => {
