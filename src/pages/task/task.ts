@@ -27,7 +27,7 @@ export class TaskPage {
   {
 
   this.content = ''
-  this.notes = navParams.get('notes') || [];
+  this.notes =  [];
   this.id = navParams.get('id');
   this.description = navParams.get('content');
   this.dueDate = navParams.get('dueDate');
@@ -38,6 +38,7 @@ export class TaskPage {
   ionViewDidLoad() {
     this.taskServiceProvider.fetchNotes(this.id, this.notesPageNumber)
     .subscribe((res : any) => {
+      console.log('is page loading')
       this.notes = this.notes.concat(res.data)
       this.contentContainer.resize()
       this.notesPageNumber++

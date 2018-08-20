@@ -361,7 +361,7 @@ var TaskPage = /** @class */ (function () {
         this.taskServiceProvider = taskServiceProvider;
         this.camera = camera;
         this.content = '';
-        this.notes = navParams.get('notes') || [];
+        this.notes = [];
         this.id = navParams.get('id');
         this.description = navParams.get('content');
         this.dueDate = navParams.get('dueDate');
@@ -372,6 +372,7 @@ var TaskPage = /** @class */ (function () {
         var _this = this;
         this.taskServiceProvider.fetchNotes(this.id, this.notesPageNumber)
             .subscribe(function (res) {
+            console.log('is page loading');
             _this.notes = _this.notes.concat(res.data);
             _this.contentContainer.resize();
             _this.notesPageNumber++;
