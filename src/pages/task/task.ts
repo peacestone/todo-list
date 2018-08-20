@@ -1,4 +1,4 @@
-import { Component ,ViewChild } from '@angular/core';
+import { Component ,ViewChild , OnInit} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {TaskServiceProvider} from '../../providers/task-service/task-service'
 import { Camera } from '@ionic-native/camera';
@@ -32,11 +32,18 @@ export class TaskPage {
   this.description = navParams.get('content');
   this.dueDate = navParams.get('dueDate');
   this.email = navParams.get('email');
-  this.notesPageNumber = 2;
+  this.notesPageNumber = 1;
 }
 
   ionViewDidLoad() {
+    this.taskServiceProvider.fetchNotes(this.id, this.notesPageNumber)
+    .subscribe((res : any) => {
+      this.notes = this.notes.concat(res.data)
+      this.contentContainer.resize()
+      this.notesPageNumber++
+    })
   }
+
 
   postNote() : void {
      this.taskServiceProvider.createNote({content: this.content, task_id: this.id})

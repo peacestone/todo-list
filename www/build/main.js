@@ -366,9 +366,16 @@ var TaskPage = /** @class */ (function () {
         this.description = navParams.get('content');
         this.dueDate = navParams.get('dueDate');
         this.email = navParams.get('email');
-        this.notesPageNumber = 2;
+        this.notesPageNumber = 1;
     }
     TaskPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        this.taskServiceProvider.fetchNotes(this.id, this.notesPageNumber)
+            .subscribe(function (res) {
+            _this.notes = _this.notes.concat(res.data);
+            _this.contentContainer.resize();
+            _this.notesPageNumber++;
+        });
     };
     TaskPage.prototype.postNote = function () {
         var _this = this;
@@ -402,15 +409,16 @@ var TaskPage = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Content */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Content */])
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Content */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Content */]) === "function" && _a || Object)
     ], TaskPage.prototype, "contentContainer", void 0);
     TaskPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-task',template:/*ion-inline-start:"/home/sholom/projects/ToDoList/src/pages/task/task.html"*/'<!--\n  Generated template for the TaskPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar hideBackButton >\n    <ion-title text-center >Task #{{id}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding overflow-scroll = "true">\n\n  <label id=\'description-label\' ><strong>Description</strong></label>\n\n  <p id=\'description-div\'>\n    {{description}}\n  </p>\n\n  <span id="due-date-span"><strong>Due Date</strong></span> <span>{{dueDate}}</span>\n\n  <span id=\'assigned-to-span\'><strong>Assigned to</strong></span> <span>{{email}}</span>\n\n  <hr>\n\n  <h5>HISTORY</h5>\n\n  <button (click)="handleHistoryButtonClick()" id=\'load-previous-button\' ion-button full color=\'light\'>Load Previous</button>\n  <div  class=\'note-div\' *ngFor="let note of notes" >\n    <div *ngIf="!note.img_url">\n      <span id=\'time-ago-span\'>{{note.created_time_ago}}</span>\n      <div>{{note.content}}</div>\n    </div>\n\n    <div *ngIf="note.img_url" >\n      <img src="http://localhost:8000{{note.img_url}}" />\n    </div>\n\n  </div>\n\n  <textarea id=\'note\' [(ngModel)]=\'content\' rows=\'3\'></textarea>\n\n  <button id=\'add-note-button\' (click)=\'postNote()\'   ion-button full color=\'light\'>Add Note </button>\n\n  <!-- <img [src]="imageURL" *ngIf="imageURL" /> -->\n\n  <button id=\'picture-button\' (click)="takePhoto()"  ion-button >\n      <ion-icon name=\'md-camera\'></ion-icon>\n  </button>\n\n  </ion-content>\n'/*ion-inline-end:"/home/sholom/projects/ToDoList/src/pages/task/task.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_task_service_task_service__["a" /* TaskServiceProvider */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */]])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_task_service_task_service__["a" /* TaskServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_task_service_task_service__["a" /* TaskServiceProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */]) === "function" && _e || Object])
     ], TaskPage);
     return TaskPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=task.js.map
