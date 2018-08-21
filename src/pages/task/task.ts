@@ -4,7 +4,7 @@ import {TaskServiceProvider} from '../../providers/task-service/task-service'
 import { Camera } from '@ionic-native/camera';
 import { Content } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-
+import {HomePage} from '../home/home';
 /**
  * Generated class for the TaskPage page.
  *
@@ -44,6 +44,10 @@ export class TaskPage {
       this.contentContainer.resize()
       this.notesPageNumber++
     })
+  }
+
+  handleTaskButtonClick() {
+    this.navCtrl.push(HomePage)
   }
 
 

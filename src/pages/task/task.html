@@ -6,11 +6,14 @@
 -->
 <ion-header>
 
-  <ion-navbar  >
-    <ion-title text-center >Task #{{id}}</ion-title>
+  <ion-navbar hideBackButton	  >
+      <ion-title text-center >Task #{{id}}</ion-title>
+      <button (click)='handleTaskButtonClick()' ion-button float-right color='secondary' small outline >Tasks</button>
   </ion-navbar>
 
 </ion-header>
+
+
 
 
 <ion-content padding overflow-scroll = "true">
