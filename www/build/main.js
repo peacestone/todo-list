@@ -6,10 +6,10 @@ webpackJsonp([2],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewTaskPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__task_task__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_task_service_task_service__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__task_task__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_task_service_task_service__ = __webpack_require__(49);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -65,7 +65,7 @@ var NewTaskPage = /** @class */ (function () {
     };
     NewTaskPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-new-task',template:/*ion-inline-start:"/home/sholom/projects/ToDoList/src/pages/new-task/new-task.html"*/'<!--\n  Generated template for the NewTaskPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar hideBackButton >\n    <ion-title   >Add New Task</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding >\n  <label id=\'description-label\' for=\'description-textarea\' >Description</label> \n  <textarea (input)=\'description = $event.target.value\' [value]=\'description\' id="description-textarea" ></textarea>\n\n  <label for="due-date">Due Date:</label>\n  <input type="date" id=\'due-date\' [(ngModel)]="dueDate" />\n  <label id=\'assigned-person\' for=\'date-select\' >Assign to</label>\n\n  <input id="email" [(ngModel)]=\'email\' />\n\n  <button ion-button id=\'add-task\' (click)="addTaskClicked($event)"  >Add Task</button>\n  <button ion-button (click)="cancelClicked()" id=\'cancel\' >Cancel</button>\n\n\n\n\n</ion-content>\n'/*ion-inline-end:"/home/sholom/projects/ToDoList/src/pages/new-task/new-task.html"*/,
+            selector: 'page-new-task',template:/*ion-inline-start:"/home/sholom/projects/todo-list/src/pages/new-task/new-task.html"*/'<!--\n  Generated template for the NewTaskPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar hideBackButton >\n    <ion-title   >Add New Task</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding >\n  <label id=\'description-label\' for=\'description-textarea\' >Description</label> \n  <textarea (input)=\'description = $event.target.value\' [value]=\'description\' id="description-textarea" ></textarea>\n\n  <label for="due-date">Due Date:</label>\n  <input type="date" id=\'due-date\' [(ngModel)]="dueDate" />\n  <label id=\'assigned-person\' for=\'date-select\' >Assign to</label>\n\n  <input id="email" [(ngModel)]=\'email\' />\n\n  <button ion-button id=\'add-task\' (click)="addTaskClicked($event)"  >Add Task</button>\n  <button ion-button (click)="cancelClicked()" id=\'cancel\' >Cancel</button>\n\n\n\n\n</ion-content>\n'/*ion-inline-end:"/home/sholom/projects/todo-list/src/pages/new-task/new-task.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__providers_task_service_task_service__["a" /* TaskServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_task_service_task_service__["a" /* TaskServiceProvider */]) === "function" && _d || Object])
     ], NewTaskPage);
@@ -144,17 +144,17 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(284);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_new_task_new_task__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_task_task__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_task_task__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_common_http__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_http__ = __webpack_require__(285);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_camera__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_task_service_task_service__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_task_service_task_service__ = __webpack_require__(49);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -228,10 +228,10 @@ var AppModule = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(48);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -257,7 +257,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/sholom/projects/ToDoList/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>'/*ion-inline-end:"/home/sholom/projects/ToDoList/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/sholom/projects/todo-list/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>'/*ion-inline-end:"/home/sholom/projects/todo-list/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -269,6 +269,67 @@ var MyApp = /** @class */ (function () {
 /***/ }),
 
 /***/ 48:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__new_task_new_task__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_task_service_task_service__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__task_task__ = __webpack_require__(54);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var HomePage = /** @class */ (function () {
+    function HomePage(navCtrl, taskServiceProvider) {
+        this.navCtrl = navCtrl;
+        this.taskServiceProvider = taskServiceProvider;
+        this.tasksList = [];
+    }
+    HomePage.prototype.ngOnInit = function () {
+        this.getTasks();
+    };
+    ;
+    HomePage.prototype.getTasks = function () {
+        var _this = this;
+        this.taskServiceProvider.getTasks()
+            .subscribe(function (data) {
+            _this.tasksList = data;
+        });
+    };
+    HomePage.prototype.itemSelected = function (item) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__new_task_new_task__["a" /* NewTaskPage */]);
+    };
+    HomePage.prototype.taskSelected = function (task) {
+        console.log(task);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__task_task__["a" /* TaskPage */], task);
+    };
+    HomePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-home',template:/*ion-inline-start:"/home/sholom/projects/todo-list/src/pages/home/home.html"*/'<ion-header color=\'#fff\'>\n  <ion-navbar hideBackButton >\n    <ion-title text-center   >\n      Tasks\n    </ion-title>\n    \n  </ion-navbar>\n</ion-header>\n\n<ion-content >\n\n      <ion-list>\n          <button  detail-none ion-item no-lines *ngFor="let task of tasksList" (click)="taskSelected(task)">\n            {{ task.content }}\n          </button>  \n        </ion-list>\n        <button color=\'light\' text-center detail-none ion-item no-lines ion-item id=\'add-task\' (click)="itemSelected(item)" >Add Task</button>\n</ion-content>\n\n'/*ion-inline-end:"/home/sholom/projects/todo-list/src/pages/home/home.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__providers_task_service_task_service__["a" /* TaskServiceProvider */]])
+    ], HomePage);
+    return HomePage;
+}());
+
+//# sourceMappingURL=home.js.map
+
+/***/ }),
+
+/***/ 49:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -328,25 +389,26 @@ var TaskServiceProvider = /** @class */ (function () {
     };
     TaskServiceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
     ], TaskServiceProvider);
     return TaskServiceProvider;
+    var _a;
 }());
 
 //# sourceMappingURL=task-service.js.map
 
 /***/ }),
 
-/***/ 53:
+/***/ 54:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TaskPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_task_service_task_service__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_task_service_task_service__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(48);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -442,7 +504,7 @@ var TaskPage = /** @class */ (function () {
     ], TaskPage.prototype, "contentContainer", void 0);
     TaskPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-task',template:/*ion-inline-start:"/home/sholom/projects/ToDoList/src/pages/task/task.html"*/'<!--\n  Generated template for the TaskPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar hideBackButton	  >\n      <ion-title text-center >Task #{{id}}</ion-title>\n      <button (click)=\'handleTaskButtonClick()\' ion-button float-right color=\'secondary\' small outline >Tasks</button>\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n<ion-content padding overflow-scroll = "true">\n\n  <label id=\'description-label\' ><strong>Description</strong></label>\n\n  <p id=\'description-div\'>\n    {{description}}\n  </p>\n\n  <span id="due-date-span"><strong>Due Date</strong></span> <span>{{dueDate}}</span>\n\n  <span id=\'assigned-to-span\'><strong>Assigned to</strong></span> <span>{{email}}</span>\n\n  <hr>\n\n  <h5>HISTORY</h5>\n\n  <button (click)="handleHistoryButtonClick()" id=\'load-previous-button\' ion-button full color=\'light\'>Load Previous</button>\n  <div  class=\'note-div\' *ngFor="let note of notes" >\n    <div *ngIf="!note.img_url">\n      <span id=\'time-ago-span\'>{{note.created_time_ago}}</span>\n      <div>{{note.content}}</div>\n    </div>\n\n    <div *ngIf="note.img_url" >\n      <img src="http://localhost:8000{{note.img_url}}" />\n    </div>\n\n  </div>\n\n  <textarea id=\'note\' [(ngModel)]=\'content\' rows=\'3\'></textarea>\n\n  <button id=\'add-note-button\' (click)=\'postNote()\'   ion-button full color=\'light\'>Add Note </button>\n\n  <!-- <img [src]="imageURL" *ngIf="imageURL" /> -->\n\n  <button id=\'picture-button\' (click)="takePhoto()"  ion-button >\n      <ion-icon name=\'md-camera\'></ion-icon>\n  </button>\n\n  </ion-content>\n'/*ion-inline-end:"/home/sholom/projects/ToDoList/src/pages/task/task.html"*/,
+            selector: 'page-task',template:/*ion-inline-start:"/home/sholom/projects/todo-list/src/pages/task/task.html"*/'<!--\n  Generated template for the TaskPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar hideBackButton	  >\n      <ion-title text-center >Task #{{id}}</ion-title>\n      <button (click)=\'handleTaskButtonClick()\' ion-button float-right color=\'secondary\' small outline >Tasks</button>\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n<ion-content padding overflow-scroll = "true">\n\n  <label id=\'description-label\' ><strong>Description</strong></label>\n\n  <p id=\'description-div\'>\n    {{description}}\n  </p>\n\n  <span id="due-date-span"><strong>Due Date</strong></span> <span>{{dueDate}}</span>\n\n  <span id=\'assigned-to-span\'><strong>Assigned to</strong></span> <span>{{email}}</span>\n\n  <hr>\n\n  <h5>HISTORY</h5>\n\n  <button (click)="handleHistoryButtonClick()" id=\'load-previous-button\' ion-button full color=\'light\'>Load Previous</button>\n  <div  class=\'note-div\' *ngFor="let note of notes" >\n    <div *ngIf="!note.img_url">\n      <span id=\'time-ago-span\'>{{note.created_time_ago}}</span>\n      <div>{{note.content}}</div>\n    </div>\n\n    <div *ngIf="note.img_url" >\n      <img src="http://localhost:8000{{note.img_url}}" />\n    </div>\n\n  </div>\n\n  <textarea id=\'note\' [(ngModel)]=\'content\' rows=\'3\'></textarea>\n\n  <button id=\'add-note-button\' (click)=\'postNote()\'   ion-button full color=\'light\'>Add Note </button>\n\n  <!-- <img [src]="imageURL" *ngIf="imageURL" /> -->\n\n  <button id=\'picture-button\' (click)="takePhoto()"  ion-button >\n      <ion-icon name=\'md-camera\'></ion-icon>\n  </button>\n\n  </ion-content>\n'/*ion-inline-end:"/home/sholom/projects/todo-list/src/pages/task/task.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__providers_task_service_task_service__["a" /* TaskServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_task_service_task_service__["a" /* TaskServiceProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */]) === "function" && _f || Object])
     ], TaskPage);
@@ -451,67 +513,6 @@ var TaskPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=task.js.map
-
-/***/ }),
-
-/***/ 80:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__new_task_new_task__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_task_service_task_service__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__task_task__ = __webpack_require__(53);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, taskServiceProvider) {
-        this.navCtrl = navCtrl;
-        this.taskServiceProvider = taskServiceProvider;
-        this.tasksList = [];
-    }
-    HomePage.prototype.ngOnInit = function () {
-        this.getTasks();
-    };
-    ;
-    HomePage.prototype.getTasks = function () {
-        var _this = this;
-        this.taskServiceProvider.getTasks()
-            .subscribe(function (data) {
-            _this.tasksList = data;
-        });
-    };
-    HomePage.prototype.itemSelected = function (item) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__new_task_new_task__["a" /* NewTaskPage */]);
-    };
-    HomePage.prototype.taskSelected = function (task) {
-        console.log(task);
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__task_task__["a" /* TaskPage */], task);
-    };
-    HomePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/sholom/projects/ToDoList/src/pages/home/home.html"*/'<ion-header color=\'#fff\'>\n  <ion-navbar hideBackButton >\n    <ion-title text-center   >\n      Tasks\n    </ion-title>\n    \n  </ion-navbar>\n</ion-header>\n\n<ion-content >\n\n      <ion-list>\n          <button  detail-none ion-item no-lines *ngFor="let task of tasksList" (click)="taskSelected(task)">\n            {{ task.content }}\n          </button>  \n        </ion-list>\n        <button color=\'light\' text-center detail-none ion-item no-lines ion-item id=\'add-task\' (click)="itemSelected(item)" >Add Task</button>\n</ion-content>\n\n'/*ion-inline-end:"/home/sholom/projects/ToDoList/src/pages/home/home.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__providers_task_service_task_service__["a" /* TaskServiceProvider */]])
-    ], HomePage);
-    return HomePage;
-}());
-
-//# sourceMappingURL=home.js.map
 
 /***/ })
 
