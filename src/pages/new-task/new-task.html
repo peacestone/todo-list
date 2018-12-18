@@ -19,9 +19,9 @@
 
   <label for="due-date">Due Date:</label>
   <input type="date" id='due-date' [(ngModel)]="dueDate" />
-  <label id='assigned-person' for='date-select' >Assign to</label>
+  <label id='assigned-person' for='email' >Assign to:</label>
 
-  <input id="email" [(ngModel)]='email' />
+  <input id="email" placeholder="Email" [(ngModel)]='email' />
 
   <button ion-button id='add-task' (click)="addTaskClicked($event)"  >Add Task</button>
   <button ion-button (click)="cancelClicked()" id='cancel' >Cancel</button>

@@ -56,21 +56,20 @@ var NewTaskPage = /** @class */ (function () {
             }, function (err) { return console.log(err); });
         }
         else {
-            var alert = this.alertCtrl.create({
+            var alert_1 = this.alertCtrl.create({
                 title: 'Task Description Cannot Be Empty!',
                 buttons: ['Dismiss']
             });
-            alert.present();
+            alert_1.present();
         }
     };
     NewTaskPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-new-task',template:/*ion-inline-start:"/home/sholom/projects/todo-list/src/pages/new-task/new-task.html"*/'<!--\n  Generated template for the NewTaskPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar hideBackButton >\n    <ion-title   >Add New Task</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding >\n  <label id=\'description-label\' for=\'description-textarea\' >Description</label> \n  <textarea (input)=\'description = $event.target.value\' [value]=\'description\' id="description-textarea" ></textarea>\n\n  <label for="due-date">Due Date:</label>\n  <input type="date" id=\'due-date\' [(ngModel)]="dueDate" />\n  <label id=\'assigned-person\' for=\'date-select\' >Assign to</label>\n\n  <input id="email" [(ngModel)]=\'email\' />\n\n  <button ion-button id=\'add-task\' (click)="addTaskClicked($event)"  >Add Task</button>\n  <button ion-button (click)="cancelClicked()" id=\'cancel\' >Cancel</button>\n\n\n\n\n</ion-content>\n'/*ion-inline-end:"/home/sholom/projects/todo-list/src/pages/new-task/new-task.html"*/,
+            selector: 'page-new-task',template:/*ion-inline-start:"/home/sholom/projects/todo-list/src/pages/new-task/new-task.html"*/'<!--\n  Generated template for the NewTaskPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar hideBackButton >\n    <ion-title   >Add New Task</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding >\n  <label id=\'description-label\' for=\'description-textarea\' >Description</label> \n  <textarea (input)=\'description = $event.target.value\' [value]=\'description\' id="description-textarea" ></textarea>\n\n  <label for="due-date">Due Date:</label>\n  <input type="date" id=\'due-date\' [(ngModel)]="dueDate" />\n  <label id=\'assigned-person\' for=\'email\' >Assign to:</label>\n\n  <input id="email" placeholder="Email" [(ngModel)]=\'email\' />\n\n  <button ion-button id=\'add-task\' (click)="addTaskClicked($event)"  >Add Task</button>\n  <button ion-button (click)="cancelClicked()" id=\'cancel\' >Cancel</button>\n\n\n\n\n</ion-content>\n'/*ion-inline-end:"/home/sholom/projects/todo-list/src/pages/new-task/new-task.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__providers_task_service_task_service__["a" /* TaskServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_task_service_task_service__["a" /* TaskServiceProvider */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__providers_task_service_task_service__["a" /* TaskServiceProvider */]])
     ], NewTaskPage);
     return NewTaskPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=new-task.js.map
@@ -389,10 +388,9 @@ var TaskServiceProvider = /** @class */ (function () {
     };
     TaskServiceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
     ], TaskServiceProvider);
     return TaskServiceProvider;
-    var _a;
 }());
 
 //# sourceMappingURL=task-service.js.map
@@ -470,11 +468,11 @@ var TaskPage = /** @class */ (function () {
             this.contentContainer.resize();
         }
         else {
-            var alert = this.alertCtrl.create({
+            var alert_1 = this.alertCtrl.create({
                 title: 'Note Content Cannot Be Empty!',
                 buttons: ['Dismiss']
             });
-            alert.present();
+            alert_1.present();
         }
     };
     TaskPage.prototype.handleHistoryButtonClick = function () {
@@ -500,16 +498,15 @@ var TaskPage = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Content */]),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Content */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Content */]) === "function" && _a || Object)
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Content */])
     ], TaskPage.prototype, "contentContainer", void 0);
     TaskPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-task',template:/*ion-inline-start:"/home/sholom/projects/todo-list/src/pages/task/task.html"*/'<!--\n  Generated template for the TaskPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar hideBackButton	  >\n      <ion-title text-center >Task #{{id}}</ion-title>\n      <button (click)=\'handleTaskButtonClick()\' ion-button float-right color=\'secondary\' small outline >Tasks</button>\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n<ion-content padding overflow-scroll = "true">\n\n  <label id=\'description-label\' ><strong>Description</strong></label>\n\n  <p id=\'description-div\'>\n    {{description}}\n  </p>\n\n  <span id="due-date-span"><strong>Due Date</strong></span> <span>{{dueDate}}</span>\n\n  <span id=\'assigned-to-span\'><strong>Assigned to</strong></span> <span>{{email}}</span>\n\n  <hr>\n\n  <h5>HISTORY</h5>\n\n  <button (click)="handleHistoryButtonClick()" id=\'load-previous-button\' ion-button full color=\'light\'>Load Previous</button>\n  <div  class=\'note-div\' *ngFor="let note of notes" >\n    <div *ngIf="!note.img_url">\n      <span id=\'time-ago-span\'>{{note.created_time_ago}}</span>\n      <div>{{note.content}}</div>\n    </div>\n\n    <div *ngIf="note.img_url" >\n      <img src="http://localhost:8000{{note.img_url}}" />\n    </div>\n\n  </div>\n\n  <textarea id=\'note\' [(ngModel)]=\'content\' rows=\'3\'></textarea>\n\n  <button id=\'add-note-button\' (click)=\'postNote()\'   ion-button full color=\'light\'>Add Note </button>\n\n  <!-- <img [src]="imageURL" *ngIf="imageURL" /> -->\n\n  <button id=\'picture-button\' (click)="takePhoto()"  ion-button >\n      <ion-icon name=\'md-camera\'></ion-icon>\n  </button>\n\n  </ion-content>\n'/*ion-inline-end:"/home/sholom/projects/todo-list/src/pages/task/task.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__providers_task_service_task_service__["a" /* TaskServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_task_service_task_service__["a" /* TaskServiceProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */]) === "function" && _f || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_task_service_task_service__["a" /* TaskServiceProvider */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */]])
     ], TaskPage);
     return TaskPage;
-    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=task.js.map
