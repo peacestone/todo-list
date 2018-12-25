@@ -99,5 +99,14 @@ export class TaskPage {
     });
   }
 
+  handlePhotoUpload = (event) => {
+    // this.imageURL = imageData
+    // this.notes.unshift()
+    // this.postNote()
+
+  }
+
+
+
 
 }

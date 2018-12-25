@@ -25833,3 +25833,7 @@ page-task div.toolbar-background {
 page-task ion-header {
   border: 1px black solid;
 }
+
+page-task .photo-input {
+  display: none;
+}

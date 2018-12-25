@@ -49,10 +49,12 @@
 
   <button id='add-note-button' (click)='postNote()'   ion-button full color='light'>Add Note </button>
 
-  <!-- <img [src]="imageURL" *ngIf="imageURL" /> -->
+  <img [src]="imageURL" *ngIf="imageURL" />
 
-  <button id='picture-button' (click)="takePhoto()"  ion-button >
+  <button id='picture-button' (click)="photoInput.click()"  ion-button >
       <ion-icon name='md-camera'></ion-icon>
   </button>
+
+  <input (change)="handlePhotoUpload(photoInput.files[0])" #photoInput type="file" on #photoInput class='photo-input'>
 
   </ion-content>

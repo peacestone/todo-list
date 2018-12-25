@@ -436,6 +436,11 @@ var TaskPage = /** @class */ (function () {
         this.navParams = navParams;
         this.taskServiceProvider = taskServiceProvider;
         this.camera = camera;
+        this.handlePhotoUpload = function (event) {
+            // this.imageURL = imageData
+            // this.notes.unshift()
+            // this.postNote()
+        };
         this.content = '';
         this.notes = [];
         this.id = navParams.get('id');
@@ -468,11 +473,11 @@ var TaskPage = /** @class */ (function () {
             this.contentContainer.resize();
         }
         else {
-            var alert_1 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'Note Content Cannot Be Empty!',
                 buttons: ['Dismiss']
             });
-            alert_1.present();
+            alert.present();
         }
     };
     TaskPage.prototype.handleHistoryButtonClick = function () {
@@ -498,15 +503,16 @@ var TaskPage = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Content */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Content */])
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Content */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Content */]) === "function" && _a || Object)
     ], TaskPage.prototype, "contentContainer", void 0);
     TaskPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-task',template:/*ion-inline-start:"/home/sholom/projects/todo-list/src/pages/task/task.html"*/'<!--\n  Generated template for the TaskPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar hideBackButton	  >\n      <ion-title text-center >Task #{{id}}</ion-title>\n      <button (click)=\'handleTaskButtonClick()\' ion-button float-right color=\'secondary\' small outline >Tasks</button>\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n<ion-content padding overflow-scroll = "true">\n\n  <label id=\'description-label\' ><strong>Description</strong></label>\n\n  <p id=\'description-div\'>\n    {{description}}\n  </p>\n\n  <span id="due-date-span"><strong>Due Date</strong></span> <span>{{dueDate}}</span>\n\n  <span id=\'assigned-to-span\'><strong>Assigned to</strong></span> <span>{{email}}</span>\n\n  <hr>\n\n  <h5>HISTORY</h5>\n\n  <button (click)="handleHistoryButtonClick()" id=\'load-previous-button\' ion-button full color=\'light\'>Load Previous</button>\n  <div  class=\'note-div\' *ngFor="let note of notes" >\n    <div *ngIf="!note.img_url">\n      <span id=\'time-ago-span\'>{{note.created_time_ago}}</span>\n      <div>{{note.content}}</div>\n    </div>\n\n    <div *ngIf="note.img_url" >\n      <img src="http://localhost:8000{{note.img_url}}" />\n    </div>\n\n  </div>\n\n  <textarea id=\'note\' [(ngModel)]=\'content\' rows=\'3\'></textarea>\n\n  <button id=\'add-note-button\' (click)=\'postNote()\'   ion-button full color=\'light\'>Add Note </button>\n\n  <!-- <img [src]="imageURL" *ngIf="imageURL" /> -->\n\n  <button id=\'picture-button\' (click)="takePhoto()"  ion-button >\n      <ion-icon name=\'md-camera\'></ion-icon>\n  </button>\n\n  </ion-content>\n'/*ion-inline-end:"/home/sholom/projects/todo-list/src/pages/task/task.html"*/,
+            selector: 'page-task',template:/*ion-inline-start:"/home/sholom/projects/todo-list/src/pages/task/task.html"*/'<!--\n  Generated template for the TaskPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar hideBackButton	  >\n      <ion-title text-center >Task #{{id}}</ion-title>\n      <button (click)=\'handleTaskButtonClick()\' ion-button float-right color=\'secondary\' small outline >Tasks</button>\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n<ion-content padding overflow-scroll = "true">\n\n  <label id=\'description-label\' ><strong>Description</strong></label>\n\n  <p id=\'description-div\'>\n    {{description}}\n  </p>\n\n  <span id="due-date-span"><strong>Due Date</strong></span> <span>{{dueDate}}</span>\n\n  <span id=\'assigned-to-span\'><strong>Assigned to</strong></span> <span>{{email}}</span>\n\n  <hr>\n\n  <h5>HISTORY</h5>\n\n  <button (click)="handleHistoryButtonClick()" id=\'load-previous-button\' ion-button full color=\'light\'>Load Previous</button>\n  <div  class=\'note-div\' *ngFor="let note of notes" >\n    <div *ngIf="!note.img_url">\n      <span id=\'time-ago-span\'>{{note.created_time_ago}}</span>\n      <div>{{note.content}}</div>\n    </div>\n\n    <div *ngIf="note.img_url" >\n      <img src="http://localhost:8000{{note.img_url}}" />\n    </div>\n\n  </div>\n\n  <textarea id=\'note\' [(ngModel)]=\'content\' rows=\'3\'></textarea>\n\n  <button id=\'add-note-button\' (click)=\'postNote()\'   ion-button full color=\'light\'>Add Note </button>\n\n  <img [src]="imageURL" *ngIf="imageURL" />\n\n  <button id=\'picture-button\' (click)="photoInput.click()"  ion-button >\n      <ion-icon name=\'md-camera\'></ion-icon>\n  </button>\n\n  <input (change)="handlePhotoUpload(photoInput.files[0])" #photoInput type="file" on #photoInput class=\'photo-input\'>\n\n  </ion-content>\n'/*ion-inline-end:"/home/sholom/projects/todo-list/src/pages/task/task.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_task_service_task_service__["a" /* TaskServiceProvider */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */]])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__providers_task_service_task_service__["a" /* TaskServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_task_service_task_service__["a" /* TaskServiceProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */]) === "function" && _f || Object])
     ], TaskPage);
     return TaskPage;
+    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=task.js.map
